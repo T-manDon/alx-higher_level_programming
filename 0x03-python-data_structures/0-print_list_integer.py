@@ -2,7 +2,7 @@
 
 def print_list_integer(my_list=None):
     """
-    Print all integers of a list.
+    Print integers on the list.
     """
 
     if my_list is None:
