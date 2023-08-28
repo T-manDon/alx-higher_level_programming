@@ -1,8 +1,5 @@
 #!/usr/bin/python3
 
-# This script prints the lowercase alphabet characters except 'q' and 'e',
-# without newline characters.
-
 # Iterate through the ASCII values of lowercase letters (97 to 122)
 for letter in range(97, 123):
     # Check if the character is not 'q' and not 'e'
