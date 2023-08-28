@@ -1,12 +1,17 @@
 #!/usr/bin/python3
+# 6-print_comb3.py
 
-"""
-Print all possible unique combinations of two digits in ascending order.
-The two digits must be different; for example, 01 and 10 are considered identical.
-"""
+# This script prints all possible different combinations of two digits in ascending order.
+# The two digits must be different - 01 and 10 are considered identical.
 
-for digit1 in range(0, 9):
+# Iterate through the first digit from 0 to 9
+for digit1 in range(0, 10):
+    # Iterate through the second digit from digit1 + 1 to 9
     for digit2 in range(digit1 + 1, 10):
-        print("{}{}".format(digit1, digit2), end=", ")
-
-print("89")  # Print the last combination (8 and 9) without a comma at the end
+        # Check if the current combination is 89
+        if digit1 == 8 and digit2 == 9:
+            # If it's 89, print it without a comma and space
+            print("{}{}".format(digit1, digit2))
+        else:
+            # For other combinations, print them with a comma and space
+            print("{}{}".format(digit1, digit2), end=", ")
