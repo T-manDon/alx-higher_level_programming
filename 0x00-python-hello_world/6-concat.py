@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-
-text = "Holberton School"
-
-print(3 * text)
-
-print(text[:9])
+str1 = "Holberton"
+str2 = "School"
+str1 += " " + str2
+print("Welcome to {}!".format(str1))
