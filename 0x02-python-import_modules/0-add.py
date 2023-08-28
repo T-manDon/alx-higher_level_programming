@@ -1,16 +1,15 @@
 #!/usr/bin/python3
 
-def add(a, b):
+# Check if this script is being run as the main program
+if __name__ == "__main__":
+    """Print the sum of 1 and 2."""
 
-    """
-    My addition function
+    # Import the 'add' function from the 'add_0' module
+    from add_0 import add
 
-    Args:
-        a: first integer
-        b: second integer
+    # Define the values to be added
+    a = 1
+    b = 2
 
-    Returns:
-        The return value. a + b
-    """
-
-    return (a + b)
+    # Print the sum using the 'add' function
+    print("{} + {} = {}".format(a, b, add(a, b)))
