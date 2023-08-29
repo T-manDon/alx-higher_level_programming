@@ -18,7 +18,7 @@ class Square:
         # Check if the size is non-negative
         elif size < 0:
             raise ValueError("size must be >= 0")
-        
+
         # Store the size in a private attribute "__size"
         self.__size = size
 

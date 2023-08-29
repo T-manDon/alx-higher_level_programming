@@ -30,7 +30,7 @@ class Square:
         # Check if the new size value is non-negative
         elif value < 0:
             raise ValueError("size must be >= 0")
-        
+
         # Set the new size value to the private attribute "__size"
         self.__size = value
 
@@ -46,7 +46,7 @@ class Square:
             # Print "#" repeatedly for each row
             [print("#", end="") for j in range(self.__size)]
             print("")  # Move to the next line after printing a row
-        
+
         # If the size is 0, print an empty line
         if self.__size == 0:
             print("")

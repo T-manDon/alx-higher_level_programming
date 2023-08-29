@@ -32,7 +32,7 @@ class Square:
         # Check if the new size value is non-negative
         elif value < 0:
             raise ValueError("size must be >= 0")
-        
+
         # Set the new size value to the private attribute "__size"
         self.__size = value
 
@@ -51,7 +51,7 @@ class Square:
                 not all(isinstance(num, int) for num in value) or
                 not all(num >= 0 for num in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
-        
+
         # Set the new position value to the private attribute "__position"
         self.__position = value
 
@@ -70,7 +70,7 @@ class Square:
 
         # Print empty lines for the vertical position
         [print("") for i in range(0, self.__position[1])]
-        
+
         # Print each row of the square with position and "#" characters
         for i in range(0, self.__size):
             [print(" ", end="") for j in range(0, self.__position[0])]

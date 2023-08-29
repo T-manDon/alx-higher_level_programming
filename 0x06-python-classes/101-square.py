@@ -34,7 +34,7 @@ class Square:
             raise TypeError("size must be an integer")
         elif value < 0:
             raise ValueError("size must be >= 0")
-        
+
         self.__size = value
 
     # Getter method for the "position" property
@@ -56,7 +56,7 @@ class Square:
                 not all(isinstance(num, int) for num in value) or
                 not all(num >= 0 for num in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
-        
+
         self.__position = value
 
     # Method to calculate the area of the square
