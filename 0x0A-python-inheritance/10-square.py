@@ -1,62 +1,33 @@
 #!/usr/bin/python3
 
-class BaseGeometry:
-    def area(self):
-        raise Exception("area() is not implemented")
+"""
+Square inherits from BaseGeometry
+"""
+# Import the Rectangle class from module 9-rectangle
+Rectangle = __import__('9-rectangle').Rectangle
 
-    def integer_validator(self, name, value):
-        if not isinstance(value, int):
-            raise TypeError(f"{name} must be an integer")
-        if value <= 0:
-            raise ValueError(f"{name} must be greater than 0")
-
-class Rectangle(BaseGeometry):
-    def __init__(self, width, height):
-        self.__width = 0
-        self.__height = 0
-        self.integer_validator("width", width)
-        self.integer_validator("height", height)
-        self.__width = width
-        self.__height = height
-
-    def area(self):
-        return self.__width * self.__height
-
-    def __str__(self):
-        return f"[Rectangle] {self.__width}/{self.__height}"
-
-    def __repr__(self):
-        return self.__str__()
-
+# Define a new class called Square that inherits from Rectangle
 class Square(Rectangle):
+    """
+    Square data that inherits from Rectangle
+    """
+
+    # Initialize the Square object with a 'size' parameter
     def __init__(self, size):
-        self.__size = 0
-        self.integer_validator("size", size)
-        self.__size = size
-        # Call the parent class (Rectangle) constructor with size as both width and height
+        # Call the integer_validator method from the Rectangle class
+        # to validate that 'size' is a positive integer
+        super().integer_validator("size", size)
+        
+        # Call the constructor of the Rectangle class, passing 'size' as both
+        # the width and height to represent a square
         super().__init__(size, size)
+        
+        # Initialize a private instance variable __size with the 'size' value
+        self.__size = size
 
-    def __str__(self):
-        return f"[Square] {self.__size}/{self.__size}"
-
-    def __repr__(self):
-        return self.__str__()
-
-# Example usage:
-if __name__ == "__main__":
-    try:
-        s = Square(5)
-        print(s)  # Output: [Square] 5/5
-        print(f"Area: {s.area()}")  # Output: Area: 25
-    except Exception as e:
-        print(e)
-
-    try:
-        s = Square(0)  # Invalid size
-    except Exception as e:
-        print(e)  # Output: size must be greater than 0
-
-    try:
-        s = Square("4")  # Invalid size
-    except Exception as e:
-        print(e)  # Output: size must be an integer
+    # Define a method 'area' to calculate the area of the square
+    def area(self):
+        """
+        calculate the area
+        """
+        return self.__size * self.__size
