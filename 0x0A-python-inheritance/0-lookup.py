@@ -1,4 +1,10 @@
 #!/usr/bin/python3
-
+"""
+Lookup
+"""
 def lookup(obj):
-    return (dir(obj))
+    """
+    Function that returns the list
+    """
+
+    return dir(obj)
