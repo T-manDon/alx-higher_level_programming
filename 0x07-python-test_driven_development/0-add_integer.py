@@ -1,19 +1,28 @@
 !/usr/bin/python3
+"""The int adds values add_integer(a, b).
 """
-This function adds "0-add_integer".
-The int adds values add_integer(a, b).
-"""
+def add_integer(a, b=98):
+    """
+    Gives addition of a and b.
 
-def add_integer(a, b):
+    Args:
+        a (int, float): the first value.
+        b (int, float): the second value.
+    """
+    if type(a) in [int, float]:
+        try:
+            a = int(a)
+        except:
+            raise TypeError('a must be an integer')
+    else:
+        raise TypeError('a must be an integer')
 
-    """Adds the two values."""
-    if type(a) is not int and type(a) is not float:
-        raise TypeError("a must be an integer")
-    if type(b) is not int and type(b) is not float:
-        raise TypeError("b must be an integer")
-    if type(a) is float:
-        a = int(a)
-    if type(b) is float:
-        b = int(b)
+    if type(b) in [int, float]:
+        try:
+            b = int(b)
+        except:
+            raise TypeError('b must be an integer')
+    else:
+        raise TypeError('b must be an integer')
 
     return a + b
